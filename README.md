@@ -10,4 +10,4 @@
 
 ## Contact
 
-Created by Jovita Feel free to contact me! [LinkedIn](https://linkedin.com/in/jovita-s-496773219)
+Created by Jovita! Feel free to contact me! [LinkedIn](https://linkedin.com/in/jovita-s-496773219)
