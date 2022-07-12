@@ -74,6 +74,37 @@ class ProductController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $product = $this->product->editProduct($id);
+        return view('product.edit')->with('product', $product);
+    }
 
+    public function update(Request $request, $id)
+    {
+
+        // validate and store data
+        $request->validate([
+            'picture' => 'required',
+            'title' => 'required',
+            'price' => 'required',
+            'description' => 'required'
+        ]);
+
+        //image upload
+
+        $data = $request->all();
+
+        if($image = $request->file('picture')) {
+            $name = time(). '.' .$image->getClientOriginalName();
+            $image->move(public_path('images'), $name);
+            $data['picture'] = "$name";
+        }
+
+        $this->product->updateProduct($id, $data);
+
+        return redirect('/products');
+
+    }
 
 }
