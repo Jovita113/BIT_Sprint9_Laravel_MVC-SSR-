@@ -6,6 +6,10 @@ interface IProductRepository {
 
     public function getAllProducts();
 
+    public function getSingleProduct($id);
+
+    public function createProduct(array $data);
+
 }
 
 ?>

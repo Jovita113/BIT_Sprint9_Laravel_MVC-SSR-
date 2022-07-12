@@ -18,4 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('products', function() {
+    return view('products');
+});
+
+
+Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
+
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
