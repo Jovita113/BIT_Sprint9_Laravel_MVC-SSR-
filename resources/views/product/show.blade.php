@@ -19,25 +19,85 @@
                   <hr>
                   <p>{{ $product->description }}</p>
                   <a href="{{ route('products.index') }}" class="btn btn-success">Go Home</a>
-                  <a href="{{ route('product.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+                  <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
                 </div>
               </div>
 
         </div>
 
-
         <div class="col-md-3">
-            <h3>All Comments</h3>
+            <h4>All Comments</h4>
 
             <div class="comments p-2 m-2" style="background-color: rgb(232, 251, 246)">
                 @foreach ($product->comments as $comment)
-                    <h5>{{ $comment->comment }} ( {{ $comment->rating }} )</h5>
+                    <p>{{ $comment->comment }} ( {{ $comment->rating }} )</p>
                     <hr>
                 @endforeach
+            </div>
+
+
+            <div class="container mt-3 p-2">
+                <h3>Add a Comment ....</h3>
+
+                <form action="" method="POST">
+                    @csrf
+                    
+                    <input type="hidden" id="id" name="id" value="{{ $product->id }}">
+
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Comment</label>
+                        <input type="text" class="form-control" name="comment" id="comment" placeholder="Enter Comment">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="rating" class="form-label">Rating</label>
+                        <input type="number" class="form-control" name="rating" id="rating" placeholder="Enter Rating">
+                    </div>
+    
+                      <button type="submit" id="addCommentBtn" class="btn btn-success">comment</button>
+    
+                </form>
+                
             </div>
 
         </div>
     </div>
 </div>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+        }
+    });
+
+
+
+    // Add Comment To Product By Id
+
+    $("#addCommentBtn").click(function(e){
+
+        //get data from form
+
+        var comment = $('#comment').val();
+        var rating =  $('#rating').val();
+        var id = $('#id').val();
+
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            data: {comment:comment, rating:rating, _token: '{{csrf_token()}}'},
+            url: "/products/"+$id,
+            success: function(data) {
+                console.log('Data Saved');
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+
+
+</script>    
 
 @endsection

@@ -13,7 +13,9 @@ class Comment extends Model
         'product_id', 'comment', 'rating'
     ];
 
+    // Belongs to  connection
+
     public function product() {
-        return $this->belongsTo(Product::class);
+       return $this->belongsTo(Product::class);
     }
 }
