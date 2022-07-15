@@ -22,6 +22,13 @@ Route::get('/', function () {
 });
 
 
+//admin
+Route::get('/admin/products', [AdminController::class, 'adminGetAllProducts'])->name('admin.products');
+Route::get('/admin/products/comments', [AdminController::class, 'adminGetAllComments'])->name('admin.products.comments');
+Route::delete('/admin/products/{id}', [AdminController::class, 'adminDeleteProduct'])->name('admin.products.delete');
+Route::delete('/admin/products/comments/{id}', [AdminController::class, 'adminDeleteComment'])->name('admin.products.comments.delete');
+
+
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
