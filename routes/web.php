@@ -22,11 +22,13 @@ Route::get('/', function () {
 });
 
 
-//admin
-Route::get('/admin/products', [AdminController::class, 'adminGetAllProducts'])->name('admin.products');
-Route::get('/admin/products/comments', [AdminController::class, 'adminGetAllComments'])->name('admin.products.comments');
-Route::delete('/admin/products/{id}', [AdminController::class, 'adminDeleteProduct'])->name('admin.products.delete');
-Route::delete('/admin/products/comments/{id}', [AdminController::class, 'adminDeleteComment'])->name('admin.products.comments.delete');
+//admin group routes
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/products', [AdminController::class, 'adminGetAllProducts'])->name('admin.products');
+    Route::get('/products/comments', [AdminController::class, 'adminGetAllComments'])->name('admin.products.comments');
+    Route::delete('/products/{id}', [AdminController::class, 'adminDeleteProduct'])->name('admin.products.delete');
+    Route::delete('/products/comments/{id}', [AdminController::class, 'adminDeleteComment'])->name('admin.products.comments.delete');
+});
 
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
@@ -40,3 +42,7 @@ Route::post('/products/update/{id}', [ProductController::class, 'update'])->name
 
 //comment module
 Route::post('/products/{id}', [CommentController::class, 'addComment'])->name('products.comment.add');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
