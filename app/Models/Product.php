@@ -10,10 +10,17 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'picture', 'title', 'price', 'description'
+        'picture',
+        'title', 
+        'price', 
+        'description'
     ];
 
+
+    // has many relation
+
     public function comments() {
-        return $this->hasMany(Comment::class);
-     }
+       return $this->hasMany(Comment::class);
+    }
+
 }

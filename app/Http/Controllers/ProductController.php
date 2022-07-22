@@ -95,11 +95,11 @@ class ProductController extends Controller
 
         $data = $request->all();
 
-        if($image = $request->file('picture')) {
-            $name = time(). '.' .$image->getClientOriginalName();
-            $image->move(public_path('images'), $name);
-            $data['picture'] = "$name";
-        }
+        // if($image = $request->file('picture')) {
+        //     $name = time(). '.' .$image->getClientOriginalName();
+        //     $image->move(public_path('images'), $name);
+        //     $data['picture'] = "$name";
+        // }
 
         $this->product->updateProduct($id, $data);
 

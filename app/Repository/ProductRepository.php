@@ -19,15 +19,13 @@ class ProductRepository implements IProductRepository {
     }
 
     public function createProduct(array $data)
-    {
-       
-        $product = new Product();
-        $product->picture = $data['picture'];
-        $product->title = $data['title'];
-        $product->price = $data['price'];
-        $product->description = $data['description'];
-
-        $product->save();
+    {  
+        Product::create([
+            'picture' => $data['picture'],
+            'title' => $data['title'],
+            'price' => $data['price'],
+            'description' => $data['description']
+        ]);
 
     }
 

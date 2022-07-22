@@ -22,11 +22,11 @@ Clone the repository
 
 Switch to the repo folder
 
-    `cd BIT_Sprint9_Laravel_MVC-SSR-`
+    cd BIT_Sprint9_Laravel_MVC-SSR-
 
 Install all the dependencies using composer
 
-    `composer install`
+    composer install
 
 Copy the example env file and make the required configuration changes in the .env file
 
@@ -40,7 +40,8 @@ Start the local development server
 
     php artisan serve
 
-You can now access the server at http://localhost:8000
+You can now access the server at http://127.0.0.1:8000
+
 
 ## Database seeding
 
