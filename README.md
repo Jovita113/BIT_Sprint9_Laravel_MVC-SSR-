@@ -6,6 +6,16 @@
  - CRUD app
  - Admin area and login system
 
+## Page example
+
+![Page](./public/images/page.png)
+![Page](./public/images/shoplist.png)
+![Page](./public/images/page.png)
+
+Admin panel
+![Page](./public/images/admin.png)
+
+
 ## Technologies
 
 Project is created with:
