@@ -8,9 +8,14 @@
 
 ## Page example
 
+Home
 ![Page](./public/images/page.png)
+
+Shop
 ![Page](./public/images/shoplist.png)
-![Page](./public/images/page.png)
+
+Product
+![Page](./public/images/product.png)
 
 Admin panel
 ![Page](./public/images/admin.png)
