@@ -41,7 +41,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'picture' => 'https://www.robotshop.com/media/catalog/product/cache/image/1350x/9df78eab33525d08d6e5fb8d27136e95/k/r/krypton-3-modular-robot-kit_1.jpg',
-            'title' => 'Krypton 3 Modular Contruction Robot Kit',
+            'title' => 'Modular Contruction Robot Kit',
             'price' => 299,
             'description' => 'The Krypton 3 Modular Robot Kit combines different types of bricks, various sensors and actuators and powerful controllers, with which youngsters can design and construct their own robots and program the robot to accomplish various tasks.',
             

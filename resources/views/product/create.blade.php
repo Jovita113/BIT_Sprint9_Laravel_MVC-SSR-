@@ -12,7 +12,7 @@
 
         <div class="mb-3">
             <label for="picture" class="form-label">Choose Picture</label>
-            <input class="form-control" type="file" name="picture" id="picture">
+            <input class="form-control" type="file" name="picture" id="picture" value="{{  }}">
           </div>
 
         <div class="mb-3">

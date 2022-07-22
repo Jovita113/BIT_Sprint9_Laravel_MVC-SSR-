@@ -8,16 +8,20 @@
 
 ## Page example
 
-Home
+#### Home
+
 ![Page](./public/images/page.png)
 
-Shop
+#### Shop
+
 ![Page](./public/images/shoplist.png)
 
-Product
+#### Product
+
 ![Page](./public/images/product.png)
 
-Admin panel
+
+#### Admin panel
 ![Page](./public/images/admin.png)
 
 
@@ -77,6 +81,13 @@ Run the database seeder and you're done
 # Authentication
 
 This applications uses Laravel UI to handle authentication. (with roles)
+- You must first register on the page
+- Then start XAMPP and MYSQL
+- In the XAMPP control panel, click Admin
+- In phpMyAdmin you have to choose 1. This will be admin. You can find the admin link at routes/web.routes
+
+![roles](/public/images/roles.png)
+
 ## Contact
 
 Created by Jovita! Feel free to contact me! [LinkedIn](https://linkedin.com/in/jovita-s-496773219)

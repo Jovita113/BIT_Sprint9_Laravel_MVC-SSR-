@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
     <div class="px-6 h-full text-gray-800">

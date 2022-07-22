@@ -1,23 +1,23 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="text-center">ROBOT TOYS</div>
+<p class="text-4xl font-bold text-center">ROBOT TOYS</p>
+<hr>
+<br/>
+<br/>
 
-
-<div class="container-xl mb-3 mt-5">
-    <div class="row row-cols-1 row-cols-md-4">
+<div class="container-xl">
+    <div class="row row-cols-6">
       @foreach ($products as $product)
-        <div class="col-mt-10">
-          <div class="rounded-lg shadow-lg bg-white max-w-sm" style="width: 16rem;">
-                <img src="{{ $product->picture }}" class="card-img-top w-80" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{ $product->title }}</h5>
-                  <h5 class="card-title">Price: ${{ $product->price }}</h5>
-                  <hr>
-                  <p class="card-text">{{ $product->description}} </p>
-                  <a href="{{ route('products.show', $product->id) }} " class="btn btn-primary">Detail</a>
-                </div>
-          </div>  
+        <div class="card mb-10 mx-8">
+          <img class="w-full aspect-square card-img-top" src="{{ $product->picture }}" alt="no picture">
+          <hr>
+          <div class="card-body">
+            <p class="card-title font-bold text-center">{{ $product->title }}</p>
+            <p class="card-title text-center">Price:</p>
+            <p class="font-bold text-center text-danger">${{ $product->price }}</p>
+            <a href="{{ route('products.show', $product->id) }} " class="btn btn-primary mt-6 ml-4">Read More</a>
+          </div>   
         </div>
         @endforeach
     </div>
