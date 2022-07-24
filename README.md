@@ -88,6 +88,16 @@ This applications uses Laravel UI to handle authentication. (with roles)
 
 ![roles](/public/images/roles.png)
 
+## Note
+
+to edit/create images you need to change:
+
+views/product/index.blade.php
+![index](./public/images/index.png)
+
+and views/product/show.blade.php
+![show](./public/images/show.png)
+
 ## Contact
 
 Created by Jovita! Feel free to contact me! [LinkedIn](https://linkedin.com/in/jovita-s-496773219)
