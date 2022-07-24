@@ -93,9 +93,11 @@ This applications uses Laravel UI to handle authentication. (with roles)
 to edit/create images you need to change:
 
 views/product/index.blade.php
+
 ![index](./public/images/index.png)
 
 and views/product/show.blade.php
+
 ![show](./public/images/show.png)
 
 ## Contact
